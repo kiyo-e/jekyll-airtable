@@ -1,4 +1,14 @@
 require "jekyll/airtable/version"
+require 'active_support/core_ext/hash/indifferent_access'
+require "airtable"
+
+module Airtable
+  class Record
+    def to_liquid
+      attributes
+    end
+  end
+end
 
 module Jekyll
   module Airtable
